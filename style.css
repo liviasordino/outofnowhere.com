@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    background-color: #eee3cf;
+    color: #594638;
+    font-family: Georgia, serif;
+}
+
+.capa {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.ornamento {
+    font-size: 40px;
+    color: #92735c;
+    margin: 20px;
+}
+
+.mini-titulo {
+    font-size: 12px;
+    letter-spacing: 5px;
+    color: #92735c;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: normal;
+    line-height: .85;
+    margin: 25px 0;
+}
+
+.subtitulo {
+    font-size: 20px;
+    font-style: italic;
+    color: #806457;
+}
+
+a {
+    margin-top: 35px;
+    padding: 14px 35px;
+
+    background: transparent;
+    border: 1px solid #806653;
+
+    color: #594638;
+
+    font-family: Georgia, serif;
+    font-size: 17px;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+.pagina-jardim {
+    min-height: 100vh;
+    padding: 80px 10%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.titulo-pequeno {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #92735c;
+}
+
+.pagina-jardim h1 {
+    font-size: 65px;
+    font-weight: normal;
+    margin: 20px 0 10px;
+}
+
+.descricao {
+    font-size: 18px;
+    font-style: italic;
+    color: #806457;
+}
+
+.mural {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.memoria {
+    width: 200px;
+    min-height: 150px;
+    padding: 25px;
+    background-color: #f5eddf;
+    border: 1px solid #cbb9a2;
+    box-sizing: border-box;
+
+    text-decoration: none;
+    color: #594638;
+}
+
+.memoria h2 {
+    font-size: 30px;
+    font-weight: normal;
+}
+.memoria p {
+    font-family: Georgia, serif;
+    font-size: 16px;
+}
+.pagina-memoria {
+    min-height: 100vh;
+    padding: 70px 10%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.pagina-memoria .titulo-pequeno {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #92735c;
+}
+
+.ornamento {
+    font-size: 38px;
+    color: #92735c;
+    margin: 15px;
+}
+
+.pagina-memoria h1 {
+    font-size: 55px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.data {
+    font-size: 17px;
+    font-style: italic;
+    color: #806457;
+}
+
+.linha {
+    width: 180px;
+    height: 1px;
+    background-color: #cbb9a2;
+    margin: 35px auto;
+}
+
+.conteudo-memoria {
+    max-width: 650px;
+    margin: auto;
+}
+
+.espaco-foto {
+    width: 500px;
+    height: 330px;
+    margin: auto;
+    background-color: #f5eddf;
+    border: 1px solid #cbb9a2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #92735c;
+    font-style: italic;
+
+    overflow: hidden;
+}
+
+.espaco-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.conteudo-memoria p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #594638;
+    margin-top: 35px;
+}
+
+.voltar {
+    color: #594638;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 16px;
+}
