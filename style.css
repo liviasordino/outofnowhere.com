@@ -187,3 +187,1011 @@ a {
     font-family: Georgia, serif;
     font-size: 16px;
 }
+
+
+/* =====================================================
+   ✦ FUNDO VINTAGE ✦
+   ===================================================== */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-color: #f7efe2;
+
+    background-image:
+        radial-gradient(
+            rgba(111, 82, 62, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 7px 7px;
+
+    color: #594638;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   ✦ PÁGINA ✦
+   ===================================================== */
+
+.pagina-memoria {
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    padding: 80px 30px;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+
+    animation: aparecerPagina 2s ease 1.5s both;
+}
+
+@keyframes aparecerPagina {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   ✦ CORTINA ✦
+   ===================================================== */
+
+.cortina {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    display: flex;
+}
+
+
+/* Cada lado da cortina */
+
+.cortina-esquerda,
+.cortina-direita {
+    width: 50%;
+    height: 100%;
+
+    position: relative;
+
+    background-color: #eee1cd;
+
+    box-shadow:
+        inset -15px 0 30px rgba(89, 70, 56, 0.08);
+
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,0.20) 0px,
+            rgba(255,255,255,0.20) 4px,
+            transparent 4px,
+            transparent 18px
+        );
+}
+
+
+/* sombra interna */
+
+.cortina-esquerda::after,
+.cortina-direita::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.15),
+            transparent 30%,
+            rgba(89,70,56,0.05)
+        );
+}
+
+
+/* Cortina esquerda abre */
+
+.cortina-esquerda {
+    transform-origin: left center;
+
+    animation:
+        abrirEsquerda 1.8s cubic-bezier(.77,0,.18,1) 0.7s forwards;
+}
+
+
+/* Cortina direita abre */
+
+.cortina-direita {
+    transform-origin: right center;
+
+    animation:
+        abrirDireita 1.8s cubic-bezier(.77,0,.18,1) 0.7s forwards;
+}
+
+
+@keyframes abrirEsquerda {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+@keyframes abrirDireita {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+/* =====================================================
+   ✦ ESTRELINHAS ✦
+   ===================================================== */
+
+.estrelas {
+    position: fixed;
+
+    z-index: 5;
+
+    color: #a98e72;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 5px rgba(169, 142, 114, 0.35);
+
+    animation:
+        estrelaAparece 1s ease forwards,
+        estrelaPisca 3s ease-in-out infinite;
+}
+
+
+/* posições */
+
+.estrelas-1 {
+    top: 15%;
+    left: 12%;
+
+    font-size: 18px;
+
+    animation-delay: 2.1s, 2.5s;
+}
+
+.estrelas-2 {
+    top: 28%;
+    right: 15%;
+
+    font-size: 13px;
+
+    animation-delay: 2.4s, 3s;
+}
+
+.estrelas-3 {
+    top: 68%;
+    left: 18%;
+
+    font-size: 12px;
+
+    animation-delay: 2.7s, 3.4s;
+}
+
+.estrelas-4 {
+    bottom: 18%;
+    right: 12%;
+
+    font-size: 20px;
+
+    animation-delay: 2.3s, 2.9s;
+}
+
+.estrelas-5 {
+    top: 45%;
+    left: 7%;
+
+    font-size: 10px;
+
+    animation-delay: 3s, 3.8s;
+}
+
+.estrelas-6 {
+    top: 52%;
+    right: 7%;
+
+    font-size: 11px;
+
+    animation-delay: 2.8s, 3.5s;
+}
+
+
+/* estrela nasce */
+
+@keyframes estrelaAparece {
+
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 0.75;
+        transform: scale(1);
+    }
+}
+
+
+/* estrela piscando */
+
+@keyframes estrelaPisca {
+
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.35) rotate(15deg);
+    }
+}
+
+
+/* =====================================================
+   ✦ TÍTULO ✦
+   ===================================================== */
+
+.pagina-memoria h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 55px;
+    font-weight: normal;
+
+    color: #594638;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        1px 1px 0 rgba(255,255,255,0.5);
+
+    margin: 10px 0;
+}
+
+
+/* capítulo */
+
+.titulo-pequeno {
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+
+    letter-spacing: 6px;
+
+    color: #92735c;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   ✦ ORNAMENTO ✦
+   ===================================================== */
+
+.ornamento {
+    color: #a98e72;
+
+    font-size: 34px;
+
+    margin: 10px 0;
+
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* =====================================================
+   ✦ DATA ✦
+   ===================================================== */
+
+.data {
+    font-size: 17px;
+
+    font-style: italic;
+
+    color: #806457;
+}
+
+
+/* =====================================================
+   ✦ LINHAS ✦
+   ===================================================== */
+
+.linha {
+    width: 180px;
+
+    height: 1px;
+
+    background-color: #cbb9a2;
+
+    margin: 35px auto;
+
+    position: relative;
+
+    opacity: 0.8;
+}
+
+.linha::before,
+.linha::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    top: -7px;
+
+    color: #b49a7d;
+
+    font-size: 9px;
+}
+
+.linha::before {
+    left: -20px;
+}
+
+.linha::after {
+    right: -20px;
+}
+
+
+/* =====================================================
+   ✦ TEXTO ✦
+   ===================================================== */
+
+.conteudo-memoria {
+    max-width: 650px;
+
+    margin: auto;
+}
+
+.conteudo-memoria p {
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #594638;
+
+    margin-top: 35px;
+}
+
+
+/* =====================================================
+   ✦ BOTÃO ✦
+   ===================================================== */
+
+.voltar {
+
+    display: inline-block;
+
+    color: #594638;
+
+    text-decoration: none;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+.voltar:hover {
+
+    color: #92735c;
+
+    transform: translateX(-5px);
+}
+
+
+/* =====================================================
+   ✦ FOTO ✦
+   ===================================================== */
+
+.espaco-foto {
+
+    width: 500px;
+    height: 330px;
+
+    margin: auto;
+
+    background-color: #f5eddf;
+
+    border: 1px solid #cbb9a2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #92735c;
+
+    font-style: italic;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(89,70,56,0.08);
+}
+
+
+/* =====================================================
+   ✦ CELULAR ✦
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .pagina-memoria {
+        padding: 60px 20px;
+    }
+
+    .pagina-memoria h1 {
+        font-size: 38px;
+    }
+
+    .conteudo-memoria p {
+        font-size: 16px;
+    }
+
+    .espaco-foto {
+        width: 90%;
+        height: 250px;
+    }
+
+    .estrelas-1 {
+        left: 5%;
+    }
+
+    .estrelas-4 {
+        right: 5%;
+    }
+}
+
+/* =====================================================
+   ✦ ESTRELAS + K+L ✦
+   ===================================================== */
+
+.decoracao {
+    position: fixed;
+    z-index: 5;
+
+    pointer-events: none;
+
+    color: #a98e72;
+
+    opacity: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    text-shadow:
+        0 0 5px rgba(169, 142, 114, 0.35);
+
+    animation:
+        decoracaoAparece 1.2s ease forwards,
+        decoracaoBrilha 3.5s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   ✦ ESTRELAS — POSIÇÕES ✦
+   ===================================================== */
+
+.estrelas-1 {
+    top: 12%;
+    left: 9%;
+    font-size: 17px;
+    animation-delay: 2.0s, 3.0s;
+}
+
+.estrelas-2 {
+    top: 19%;
+    left: 25%;
+    font-size: 10px;
+    animation-delay: 2.5s, 3.8s;
+}
+
+.estrelas-3 {
+    top: 31%;
+    left: 7%;
+    font-size: 14px;
+    animation-delay: 2.2s, 4.2s;
+}
+
+.estrelas-4 {
+    top: 42%;
+    left: 17%;
+    font-size: 9px;
+    animation-delay: 3.0s, 3.4s;
+}
+
+.estrelas-5 {
+    top: 57%;
+    left: 8%;
+    font-size: 18px;
+    animation-delay: 2.8s, 4.5s;
+}
+
+.estrelas-6 {
+    bottom: 17%;
+    left: 20%;
+    font-size: 11px;
+    animation-delay: 3.3s, 3.7s;
+}
+
+.estrelas-7 {
+    top: 14%;
+    right: 10%;
+    font-size: 12px;
+    animation-delay: 2.3s, 4.1s;
+}
+
+.estrelas-8 {
+    top: 26%;
+    right: 24%;
+    font-size: 18px;
+    animation-delay: 2.7s, 3.2s;
+}
+
+.estrelas-9 {
+    top: 37%;
+    right: 8%;
+    font-size: 10px;
+    animation-delay: 3.2s, 4.7s;
+}
+
+.estrelas-10 {
+    top: 51%;
+    right: 18%;
+    font-size: 15px;
+    animation-delay: 2.4s, 3.9s;
+}
+
+.estrelas-11 {
+    top: 66%;
+    right: 7%;
+    font-size: 11px;
+    animation-delay: 3.5s, 4.3s;
+}
+
+.estrelas-12 {
+    bottom: 13%;
+    right: 23%;
+    font-size: 19px;
+    animation-delay: 2.9s, 3.6s;
+}
+
+.estrelas-13 {
+    top: 8%;
+    left: 48%;
+    font-size: 8px;
+    animation-delay: 3.7s, 4.8s;
+}
+
+.estrelas-14 {
+    top: 76%;
+    left: 39%;
+    font-size: 12px;
+    animation-delay: 3.1s, 4.0s;
+}
+
+.estrelas-15 {
+    bottom: 8%;
+    left: 52%;
+    font-size: 9px;
+    animation-delay: 2.6s, 4.6s;
+}
+
+.estrelas-16 {
+    top: 85%;
+    right: 40%;
+    font-size: 15px;
+    animation-delay: 3.4s, 3.3s;
+}
+
+
+/* =====================================================
+   ♡ K+L — A ASSINATURA DE VOCÊS ♡
+   ===================================================== */
+
+.casal {
+    color: #92735c;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 6px rgba(146, 115, 92, 0.25);
+}
+
+
+/* posições K+L */
+
+.kl-1 {
+    top: 23%;
+    left: 14%;
+    animation-delay: 3.0s, 3.7s;
+}
+
+.kl-2 {
+    top: 16%;
+    right: 17%;
+    animation-delay: 3.8s, 4.4s;
+}
+
+.kl-3 {
+    top: 47%;
+    left: 6%;
+    animation-delay: 4.2s, 3.2s;
+}
+
+.kl-4 {
+    top: 61%;
+    right: 9%;
+    animation-delay: 3.4s, 4.8s;
+}
+
+.kl-5 {
+    bottom: 24%;
+    left: 27%;
+    animation-delay: 4.5s, 3.9s;
+}
+
+.kl-6 {
+    bottom: 10%;
+    right: 28%;
+    animation-delay: 3.6s, 4.6s;
+}
+
+
+/* =====================================================
+   ✦ NASCE BEM DEVAGAR ✦
+   ===================================================== */
+
+@keyframes decoracaoAparece {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+
+    100% {
+        opacity: 0.65;
+        transform: scale(1);
+    }
+}
+
+
+/* =====================================================
+   ✦ BRILHA + SOME + VOLTA ✦
+   ===================================================== */
+
+@keyframes decoracaoBrilha {
+
+    0% {
+        opacity: 0.15;
+        transform: scale(0.8);
+    }
+
+    25% {
+        opacity: 0.75;
+        transform: scale(1.15);
+    }
+
+    50% {
+        opacity: 0.25;
+        transform: scale(0.9);
+    }
+
+    75% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0.15;
+        transform: scale(0.8);
+    }
+}
+
+
+/* =====================================================
+   ✦ CORREÇÃO DA TEXTURA DO FUNDO ✦
+   ===================================================== */
+
+body {
+    background-image:
+        radial-gradient(
+            rgba(111, 82, 62, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 7px 7px;
+}
+
+/* =====================================================
+   🚲 BICICLETA — SILHUETA DELICADA
+   ===================================================== */
+
+.bike {
+    position: fixed;
+
+    width: 170px;
+    height: 95px;
+
+    left: -200px;
+    bottom: 38%;
+
+    z-index: 10000;
+
+    pointer-events: none;
+
+    animation: bikePassando 4s ease-in-out 0.8s forwards;
+}
+
+
+/* =====================================================
+   ✦ RODAS
+   ===================================================== */
+
+.bike-roda {
+    position: absolute;
+
+    width: 52px;
+    height: 52px;
+
+    border: 4px solid #806457;
+
+    border-radius: 50%;
+
+    box-sizing: border-box;
+}
+
+
+/* roda de trás */
+
+.bike-roda-1 {
+    left: 8px;
+    bottom: 4px;
+}
+
+
+/* roda da frente */
+
+.bike-roda-2 {
+    right: 8px;
+    bottom: 4px;
+}
+
+
+/* =====================================================
+   ✦ QUADRO
+   ===================================================== */
+
+.bike-linha {
+    position: absolute;
+
+    height: 4px;
+
+    background-color: #806457;
+
+    border-radius: 5px;
+
+    transform-origin: left center;
+}
+
+
+/* linha de baixo — liga as rodas */
+
+.bike-base {
+    width: 72px;
+
+    left: 34px;
+    bottom: 30px;
+
+    transform: rotate(0deg);
+}
+
+
+/* parte traseira */
+
+.bike-traseira {
+    width: 48px;
+
+    left: 34px;
+    bottom: 30px;
+
+    transform: rotate(-52deg);
+}
+
+
+/* parte dianteira */
+
+.bike-dianteira {
+    width: 50px;
+
+    left: 72px;
+    bottom: 30px;
+
+    transform: rotate(-67deg);
+}
+
+
+/* parte superior do quadro */
+
+.bike-superior {
+    width: 50px;
+
+    left: 55px;
+    bottom: 68px;
+
+    transform: rotate(143deg);
+}
+
+
+/* =====================================================
+   ✦ BANCO
+   ===================================================== */
+
+.bike-banco {
+    position: absolute;
+
+    width: 20px;
+    height: 4px;
+
+    background: #806457;
+
+    border-radius: 5px;
+
+    left: 49px;
+    bottom: 72px;
+}
+
+
+/* suporte do banco */
+
+.bike-banco::after {
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 15px;
+
+    background: #806457;
+
+    left: 9px;
+    top: 3px;
+
+    transform: rotate(8deg);
+}
+
+
+/* =====================================================
+   ✦ GUIDÃO
+   ===================================================== */
+
+.bike-guidão {
+    position: absolute;
+
+    width: 22px;
+    height: 4px;
+
+    background: #806457;
+
+    border-radius: 5px;
+
+    right: 25px;
+    bottom: 71px;
+
+    transform: rotate(-35deg);
+}
+
+
+/* pequeno suporte do guidão */
+
+.bike-guidão::after {
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 17px;
+
+    background: #806457;
+
+    left: 2px;
+    top: 2px;
+
+    transform: rotate(25deg);
+}
+
+
+/* =====================================================
+   ✦ MOVIMENTO
+   ===================================================== */
+
+@keyframes bikePassando {
+
+    0% {
+        left: -200px;
+        transform: translateY(0);
+    }
+
+    15% {
+        transform: translateY(-2px);
+    }
+
+    30% {
+        transform: translateY(1px);
+    }
+
+    45% {
+        transform: translateY(-2px);
+    }
+
+    60% {
+        transform: translateY(1px);
+    }
+
+    75% {
+        transform: translateY(-1px);
+    }
+
+    100% {
+        left: 110%;
+        transform: translateY(0);
+    }
+}
